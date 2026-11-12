@@ -2,6 +2,17 @@
 #!desc=拦截常见广告、统计与追踪域名；不启用 HTTPS 解密，不修改网页内容。
 
 [Rule]
+# YouTube App / 网站走代理（仅优化线路，不保证去除首页广告）
+# YouTube 相关域名优先走代理，避免被后续 GEOIP,CN 规则分流为直连
+DOMAIN-SUFFIX,youtube.com,PROXY
+DOMAIN-SUFFIX,youtu.be,PROXY
+DOMAIN-SUFFIX,youtube-nocookie.com,PROXY
+DOMAIN-SUFFIX,googlevideo.com,PROXY
+DOMAIN-SUFFIX,ytimg.com,PROXY
+DOMAIN-SUFFIX,yt3.ggpht.com,PROXY
+DOMAIN-SUFFIX,youtubei.googleapis.com,PROXY
+DOMAIN-SUFFIX,youtube.googleapis.com,PROXY
+
 # 常见广告投放与统计
 DOMAIN-SUFFIX,doubleclick.net,REJECT
 DOMAIN-SUFFIX,googlesyndication.com,REJECT
