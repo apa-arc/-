@@ -2,6 +2,9 @@
 #!desc=拦截常见广告、统计与追踪域名；不启用 HTTPS 解密，不修改网页内容。
 
 [Rule]
+# 抖音国内版完整域名规则集（远程规则，随上游更新）
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouYin/DouYin.list,DIRECT
+
 # YouTube App / 网站走代理（仅优化线路，不保证去除首页广告）
 # YouTube 相关域名优先走代理，避免被后续 GEOIP,CN 规则分流为直连
 DOMAIN-SUFFIX,youtube.com,PROXY
