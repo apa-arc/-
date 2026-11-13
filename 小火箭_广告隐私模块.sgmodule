@@ -2,6 +2,13 @@
 #!desc=拦截常见广告、统计与追踪域名；不启用 HTTPS 解密，不修改网页内容。
 
 [Rule]
+# X（Twitter）及图片、视频 CDN 强制走代理，避免被 GEOIP,CN 误判为直连
+DOMAIN-SUFFIX,x.com,PROXY
+DOMAIN-SUFFIX,twitter.com,PROXY
+DOMAIN-SUFFIX,twimg.com,PROXY
+DOMAIN-SUFFIX,t.co,PROXY
+DOMAIN-SUFFIX,tweetdeck.com,PROXY
+
 # 抖音国内版完整域名规则集（远程规则，随上游更新）
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouYin/DouYin.list,DIRECT
 
