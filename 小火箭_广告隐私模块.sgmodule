@@ -1,5 +1,5 @@
-#!name=小火箭-广告与隐私基础拦截
-#!desc=拦截常见广告、统计与追踪域名；不启用 HTTPS 解密，不修改网页内容。
+#!name=小火箭-广告隐私与视频直连
+#!desc=温和广告与追踪拦截，并将常见国内视频平台及 CDN 设为直连；不启用 HTTPS 解密。
 
 [Rule]
 # X（Twitter）及图片、视频 CDN 强制走代理，避免被 GEOIP,CN 误判为直连
@@ -12,8 +12,40 @@ DOMAIN-SUFFIX,tweetdeck.com,PROXY
 # 抖音国内版完整域名规则集（远程规则，随上游更新）
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/DouYin/DouYin.list,DIRECT
 
+# 国内视频平台及视频 CDN 直连
+# 哔哩哔哩
+DOMAIN-SUFFIX,bilibili.com,DIRECT
+DOMAIN-SUFFIX,bilivideo.com,DIRECT
+DOMAIN-SUFFIX,bilivideo.cn,DIRECT
+DOMAIN-SUFFIX,hdslb.com,DIRECT
+DOMAIN-SUFFIX,biliapi.net,DIRECT
+
+# 爱奇艺
+DOMAIN-SUFFIX,iqiyi.com,DIRECT
+DOMAIN-SUFFIX,qiyi.com,DIRECT
+DOMAIN-SUFFIX,qy.net,DIRECT
+DOMAIN-SUFFIX,qiyipic.com,DIRECT
+
+# 腾讯视频
+DOMAIN-SUFFIX,v.qq.com,DIRECT
+DOMAIN-SUFFIX,video.qq.com,DIRECT
+DOMAIN-SUFFIX,gtimg.com,DIRECT
+
+# 优酷
+DOMAIN-SUFFIX,youku.com,DIRECT
+DOMAIN-SUFFIX,ykimg.com,DIRECT
+
+# 芒果 TV
+DOMAIN-SUFFIX,mgtv.com,DIRECT
+DOMAIN-SUFFIX,hunantv.com,DIRECT
+
+# 抖音及字节系视频 CDN
+DOMAIN-SUFFIX,douyin.com,DIRECT
+DOMAIN-SUFFIX,douyinvod.com,DIRECT
+DOMAIN-SUFFIX,bytecdn.cn,DIRECT
+DOMAIN-SUFFIX,byteimg.com,DIRECT
+
 # YouTube App / 网站走代理（仅优化线路，不保证去除首页广告）
-# YouTube 相关域名优先走代理，避免被后续 GEOIP,CN 规则分流为直连
 DOMAIN-SUFFIX,youtube.com,PROXY
 DOMAIN-SUFFIX,youtu.be,PROXY
 DOMAIN-SUFFIX,youtube-nocookie.com,PROXY
